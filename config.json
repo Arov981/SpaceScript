@@ -1,0 +1,57 @@
+{
+  "version": "1.0.0",
+  "bridge": {
+    "host": "127.0.0.1",
+    "port": 6471,
+    "publicDashboard": false,
+    "maxClients": 8
+  },
+  "mcp": {
+    "transport": "http",
+    "endpoint": null,
+    "discovery": {
+      "enabled": true,
+      "probePorts": [6472, 6473, 6474, 6475, 6476]
+    },
+    "connectTimeoutMs": 4000,
+    "requestTimeoutMs": 30000,
+    "reconnectMs": 3000
+  },
+  "skills": {
+    "dir": "skills"
+  },
+  "memory": {
+    "dir": ".spaceforge-memory",
+    "file": "memory.json",
+    "maxEntries": 2000
+  },
+  "toolAliases": {
+    "studio.read_script": "ReadScript",
+    "studio.write_script": "WriteScript",
+    "studio.run_luau": "ExecuteLuau",
+    "studio.screenshot": "Screenshot",
+    "tree.list": "GetChildren",
+    "tree.find": "FindInstance",
+    "tree.create": "CreateInstance",
+    "tree.delete": "DeleteInstance",
+    "assets.insert": "InsertAsset",
+    "playtest.start": "PlayTest",
+    "playtest.stop": "StopPlayTest"
+  },
+  "providers": {
+    "systemPrompt": "SpaceScript v1.0.0 — You are operating Roblox Studio through the SpaceScript bridge. To call a tool, emit a fenced block tagged `spacescript` containing a single JSON object: {\"tool\":\"<name>\",\"params\":{...}}. Wait for the result message before continuing. Make one tool call per turn unless batching is clearly required. Prefer readable Luau and idiomatic Roblox patterns.",
+    "sites": [
+      "chat.deepseek.com",
+      "chatgpt.com",
+      "gemini.google.com",
+      "claude.ai",
+      "grok.com",
+      "chat.mistral.ai",
+      "kimi.ai",
+      "chat.z.ai",
+      "chat.qwen.ai",
+      "arena.ai",
+      "meta.ai"
+    ]
+  }
+}

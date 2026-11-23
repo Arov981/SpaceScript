@@ -1,0 +1,20 @@
+{
+  "name": "spacescript-bridge",
+  "version": "1.0.0",
+  "description": "SpaceScript local bridge — connects AI chat providers to Roblox Studio via MCP. Clean-room, MIT, no attribution required.",
+  "type": "module",
+  "main": "bridge/index.js",
+  "bin": {
+    "spacescript": "bridge/index.js"
+  },
+  "scripts": {
+    "start": "node bridge/index.js",
+    "dev": "node --watch bridge/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "keywords": ["roblox", "roblox-studio", "mcp", "ai-agent", "luau", "browser-extension"],
+  "private": true
+}
