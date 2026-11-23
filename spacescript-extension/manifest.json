@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "SpaceScript",
+  "version": "1.0.0",
+  "description": "Turn any AI chat into a Roblox Studio agent. Zero API keys. Zero credits. Zero limits.",
+  "icons": {
+    "16": "icons/icon.svg",
+    "48": "icons/icon.svg",
+    "128": "icons/icon.svg"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "SpaceScript"
+  },
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "scripting", "activeTab", "tabs", "notifications"],
+  "host_permissions": [
+    "http://127.0.0.1:6471/*",
+    "https://chat.deepseek.com/*",
+    "https://chatgpt.com/*",
+    "https://gemini.google.com/*",
+    "https://claude.ai/*",
+    "https://grok.com/*",
+    "https://chat.mistral.ai/*",
+    "https://kimi.ai/*",
+    "https://chat.z.ai/*",
+    "https://chat.qwen.ai/*",
+    "https://arena.ai/*",
+    "https://www.meta.ai/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*",
+        "https://chatgpt.com/*",
+        "https://gemini.google.com/*",
+        "https://claude.ai/*",
+        "https://grok.com/*",
+        "https://chat.mistral.ai/*",
+        "https://kimi.ai/*",
+        "https://chat.z.ai/*",
+        "https://chat.qwen.ai/*",
+        "https://arena.ai/*",
+        "https://www.meta.ai/*"
+      ],
+      "js": ["content/content.js"],
+      "css": ["content/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

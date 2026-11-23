@@ -1,0 +1,67 @@
+#spacescript-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 8px;
+  padding: 6px 10px;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(2, 6, 23, 0.92));
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 12px;
+  color: #e2e8f0;
+  font: 13px/1.2 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  z-index: 2147483000;
+}
+#spacescript-bar .ss-dot {
+  width: 10px; height: 10px; border-radius: 999px; flex: 0 0 auto;
+  background: #64748b; box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.18);
+}
+#spacescript-bar .ss-dot[data-level="ok"]   { background: #10b981; box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.22); }
+#spacescript-bar .ss-dot[data-level="warn"] { background: #f59e0b; box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22); }
+#spacescript-bar .ss-dot[data-level="err"]  { background: #ef4444; box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.22); }
+#spacescript-bar .ss-title { font-weight: 700; color: #34d399; letter-spacing: 0.2px; }
+#spacescript-bar .ss-btn {
+  appearance: none;
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  background: rgba(16, 185, 129, 0.12);
+  color: #6ee7b7;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+#spacescript-bar .ss-btn:hover { background: rgba(16, 185, 129, 0.22); }
+#spacescript-bar .ss-skill {
+  appearance: none;
+  background: rgba(2, 6, 23, 0.6);
+  color: #cbd5e1;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font: inherit;
+  cursor: pointer;
+  max-width: 220px;
+}
+#spacescript-bar .ss-msg {
+  margin-left: auto;
+  color: #94a3b8;
+  font-size: 12px;
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ss-chip {
+  display: inline-block;
+  margin: 4px 6px 0 0;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font: 11px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: #0f172a;
+  background: #cbd5e1;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.ss-chip-running { background: #fde68a; }
+.ss-chip-ok      { background: #6ee7b7; }
+.ss-chip-err     { background: #fca5a5; }
