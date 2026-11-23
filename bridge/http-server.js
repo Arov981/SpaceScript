@@ -117,7 +117,7 @@ async function readJson(req) {
   try { return JSON.parse(Buffer.concat(chunks).toString('utf8')); } catch { return null; }
 }
 
-// Minimal RFC 6455 WebSocket peer (text frames only, masked client frames handled).
+// Minimal RFC 6455 WebSocket peer (text frames only; masked client frames handled).
 class Peer {
   constructor(socket, onMessage) {
     this.socket = socket;
@@ -172,6 +172,8 @@ class Peer {
 function frame(opcode, payload) {
   const len = payload.length;
   let header;
+  if (len < 126) {
+    header = Buffer.alloc(2);
     header[0] = 0x80 | opcode;
     header[1] = len;
   } else if (len < 65536) {
